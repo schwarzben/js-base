@@ -4,7 +4,7 @@
   "description": "A simple starter kit for arduino based web apps",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "author": "jens alexander ewald",
   "license": "MIT",
