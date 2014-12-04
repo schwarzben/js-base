@@ -23,6 +23,6 @@ try {
     // start the server
     server.listen(3000);
   });
-} catch {
+} catch (e) {
   console.error("Have you connected your Arudino board?");
 }
