@@ -1,0 +1,16 @@
+{
+  "name": "hardweb-starter-kit",
+  "version": "0.0.1",
+  "description": "A simple starter kit for arduino based web apps",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "jens alexander ewald",
+  "license": "MIT",
+  "dependencies": {
+    "express-livereload": "0.0.24",
+    "express.io": "^1.1.13",
+    "johnny-five": "^0.8.29"
+  }
+}
