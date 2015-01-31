@@ -29,7 +29,9 @@ try {
     // start the server
     server.listen(3000);
     // testing
-    //repl.inject(board);
+    setInterval(function () {
+        board.analogWrite(14, Math.floor(Math.random() * 256));
+    }, 3000);
   });
 } catch (e) {
   console.error("Have you connected your Arudino board?");

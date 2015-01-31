@@ -6,7 +6,7 @@ module.exports = function (socket, board, Arduino) {
     function onData() {
         // Display data (may be analog or digital)
         // DEBUG
-        // console.log('received data, you may inspect now');
+        console.log('received data, you may inspect now');
         // console.log(arguments);
         // console.log(this); // expected to be the pin instance
         // Actually read pin data and broadcast to socket
@@ -42,10 +42,4 @@ module.exports = function (socket, board, Arduino) {
         socket.broadcast('mydat', {allPins: board.pins, msg: '' + typeof board});
     }, 3000);
     */
-
-    // DEBUG emulate arduino usage for testing
-    // (still requires an arduino device—maybe board emulation is an option?)
-    setInterval(function () {
-        board.analogWrite(14, Math.floor(Math.random() * 256));
-    }, 3000);
 };
