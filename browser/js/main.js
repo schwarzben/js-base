@@ -4,5 +4,8 @@
 var socket = io.connect();
 
 $(function(){
-  // Put your jQuery code in here please :)
+  	// Put your jQuery code in here please :)
+	socket.on("mydat", function (data) {
+        console.log(data.allPins);
+    });
 });
