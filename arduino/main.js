@@ -13,6 +13,8 @@ module.exports = function (socket, board, Arduino) {
         // TODO maybe passing the whole pin object around is overkill
         this.read((function (pin) {
             return function (value) {
+                // DEBUG
+                console.log("value read at pin " + pin.id);
                 socket.broadcast('mydat', {'pin': pin, 'value': value});
             };
         }(this)));
@@ -24,6 +26,8 @@ module.exports = function (socket, board, Arduino) {
         if (pin_cap.supportedModes == false // falsy on empty array, e.g. on pin_cap 0
                 || pin_cap.supportedModes.indexOf(Arduino.Pin.INPUT) === -1) {
             // pin does not support reading of values so skip it altogether
+            // DEBUG
+            console.log("Pin " + i + ": Not an input.")
             continue;
         }
         // set pin mode to input
@@ -38,4 +42,10 @@ module.exports = function (socket, board, Arduino) {
         socket.broadcast('mydat', {allPins: board.pins, msg: '' + typeof board});
     }, 3000);
     */
+
+    // DEBUG emulate arduino usage for testing
+    // (still requires an arduino device—maybe board emulation is an option?)
+    setInterval(function () {
+        board.analogWrite(14, Math.floor(Math.random() * 256));
+    }, 3000);
 };
