@@ -42,4 +42,28 @@ module.exports = function (socket, board, Arduino) {
         socket.broadcast('mydat', {allPins: board.pins, msg: '' + typeof board});
     }, 3000);
     */
+    // DEBUG api
+    return {
+        newDings: function (what) {
+            var ret;
+            console.log('newDings called with "' + what + '"');
+            switch (what) {
+                case 1:
+                    ret = {read: function (callback) {
+                            callback(Math.floor(Math.random() * 256));
+                        }, id: 5};
+                    break;
+                case 2:
+                    ret = {read: function (callback) {
+                            callback(Math.floor(Math.random() * 256));
+                        }, id: 10};
+                    break;
+                default:
+                    ret = {read: function (callback) {
+                            callback(13);
+                        }, id: 'mocky'};
+            }
+            onData.call(ret);
+        }
+    }
 };

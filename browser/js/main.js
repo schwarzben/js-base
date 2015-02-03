@@ -4,8 +4,9 @@
 var socket = io.connect();
 
 $(function(){
-  	// Put your jQuery code in here please :)
+  	var $text = $("<div>").appendTo("body");
 	socket.on("mydat", function (data) {
-        console.log(data.allPins);
+        //console.log(data.allPins);
+        $text.text('Pin ' + data.pin.id + ' received value ' + data.value);
     });
 });
