@@ -20,7 +20,7 @@ var five = require("johnny-five");
 // Connect the arduino board
 try {
   //var board = new five.Board();
-  var board = new five.Board({io: new MockFirmata()});
+  var board = new five.Board({io: new MockFirmata(), debug: false, repl: false});
 
   // After everything is connected, we run your arduino code
   board.on("ready", function() {
@@ -29,8 +29,10 @@ try {
     // start the server
     server.listen(3000);
     // testing
+    board.analogRead(14, function (val) { console.log(val); });
     setInterval(function () {
         board.analogWrite(14, Math.floor(Math.random() * 256));
+        board.analogRead(14, function (val) { console.log(val); });
     }, 3000);
   });
 } catch (e) {
