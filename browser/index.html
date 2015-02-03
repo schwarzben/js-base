@@ -4,10 +4,33 @@
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/main.js"></script>
+    <!--
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
+  -->
     <title>The Hardweb Starter Kit</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="oh-johnny-visuals_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-57140723 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+    <style>
+#Stage {width: 800px !important; height: 600px !important;}
+    </style>
+    <script>
+/*
+AdobeEdge.bootstrapCallback(function(compId) {
+    //do stuff with the composition
+    var comp = AdobeEdge.getComposition(compId);
+    comp.getStage().play('pin2');
+});
+*/
+    </script>
+
   </head>
   <body>
   <!-- Your HTML here -->
+  <div id="Stage" class="EDGE-57140723">
+  </div>
   </body>
 </html>
