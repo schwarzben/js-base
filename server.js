@@ -15,16 +15,16 @@ var five = require("johnny-five");
 
 // Connect the arduino board
 try {
-  //var board = new five.Board();
-  var board = new five.Board({io: new MockFirmata(), debug: false, repl: false});
+    //var board = new five.Board();
+    var board = new five.Board({io: new MockFirmata(), debug: false, repl: false});
 
-  // After everything is connected, we run your arduino code
-  board.on("ready", function() {
-    // init arduino/index.js
-    arduino(server.io,board,five);
-    // start the server
-    server.listen(3000);
-  });
+    // After everything is connected, we run your arduino code
+    board.on("ready", function () {
+        // init arduino/index.js
+        arduino(server.io, board, five);
+        // start the server
+        server.listen(3000);
+    });
 } catch (e) {
-  console.error("Have you connected your Arudino board?");
+    console.error("Have you connected your Arudino board?");
 }

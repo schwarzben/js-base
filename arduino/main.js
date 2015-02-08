@@ -42,7 +42,7 @@ module.exports = function (socket, board, Arduino) {
             type: this.type,
             value: this.value
         };
-    }
+    };
 
     // DEBUG
     setInterval(function () {
