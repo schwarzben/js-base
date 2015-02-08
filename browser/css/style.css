@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+.l-main {
+  margin: 5em auto;
+}
+.duino {
+  position: relative;
+}
+.bubble {
+  position: absolute;
+  background: rgba(255,255,255,.7);
+}
