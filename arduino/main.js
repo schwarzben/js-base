@@ -33,9 +33,22 @@ module.exports = function (socket, board, Arduino) {
         (new Arduino.Pin(i)).on('data', onData);
     }
 
-    /* DEBUG
+    // Define what gets sent when the Pin instance gets stringified
+    // https://github.com/rwaldron/johnny-five/wiki/Pin
+    Arduino.Pin.prototype.toJSON = function () {
+        return {
+            id: this.id,
+            addr: this.addr,
+            type: this.type,
+            value: this.value
+        };
+    }
+
+    // DEBUG
     setInterval(function () {
-        socket.broadcast('mydat', {allPins: board.pins, msg: '' + typeof board});
+        socket.broadcast('mydat', {
+            pin: new Arduino.Pin({pin: Math.floor(Math.random() * 20)}),
+            value: Math.floor(Math.random() * 256)
+        });
     }, 3000);
-    */
 };
