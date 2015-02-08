@@ -34,14 +34,14 @@
           <h3>
 <a id="so-what-is-it-with-this-johnny" class="anchor" href="#so-what-is-it-with-this-johnny" aria-hidden="true"><span class="octicon octicon-link"></span></a>So what is it with this Johnny?</h3>
 
-<p><strong>Oh Johnny</strong> enables you to watch when sensors are being connected to your *duino board and what kind of signal they produce. <strong>Oh Johnny</strong> makes use of the <strong>johnny-five</strong> library to read sensor data which in turn relies upon a <a href="">Firmata prototcol</a> implementation for <a href="">node.js</a>.</p>
+<p><strong>Oh Johnny</strong> enables you to watch when sensors are being connected to your *duino board and what kind of signal they produce. <strong>Oh Johnny</strong> makes use of the <a href="https://github.com/rwaldron/johnny-five">Johnny-Five</a> library to read sensor data which in turn relies upon a <a href="https://github.com/jgautier/firmata">Firmata prototcol implementation</a> for <a href="http://nodejs.org/">Node.js</a>.</p>
 
 <h3>
 <a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h3>
 
-<p>Since <strong>Oh Johnny</strong> connects the physical world with the digital, a server needs to be started on the machine to which the *duino is connected, before any browser client may read out and display its signals:</p>
+<p>Since <strong>Oh Johnny</strong> connects the physical world with the digital, a server needs to be started on the machine to which an *duino with the <a href="http://www.firmata.org/wiki/Download#Arduino.2FWiring">Standard Firmata</a> is connected, before any browser client may read out and display its signals:</p>
 
-<pre><code>$ node install # needed only once
+<pre><code>$ npm install # needed only once to install dependencies
 $ node server.js
 </code></pre>
 
@@ -55,7 +55,19 @@ $ node server.js
 <h3>
 <a id="help-welcome" class="anchor" href="#help-welcome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Help welcome!</h3>
 
-<p>Anybody with a grasp of knowledge on electronics and/or node programming language is welcome to help with the analog noise/connection detection issues preventing this project from unleashing its full potential.</p>
+<p>Anybody with a grasp of knowledge on electronics and/or Node.js programming is welcome to help with the analog noise/connection detection issues preventing this project from unleashing its full potential.</p>
+
+<h3>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roadmap</h3>
+
+<p>In no particular order:</p>
+
+<ol>
+<li>Pimp visuals (current plan: Speech bubbles next to pins)</li>
+<li>Record values and display as <a href="http://en.wikipedia.org/wiki/Sparkline">sparklines</a> inside the bubble</li>
+<li>Get a working sensor connection detection</li>
+<li>Filter out noise from analog pins</li>
+</ol>
         </section>
 
         <footer>
