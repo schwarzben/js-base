@@ -52,10 +52,10 @@ $(function () {
         // Create bubble or re-use existing
         bubble = bubbles[whichPin]
             || $('<div class="bubble">').css({
-                //left: coords[whichPin].left - document.body.scrollLeft,
-                //top: coords[whichPin].top - document.body.scrollTop
-                left: coords[whichPin].left,
-                top: coords[whichPin].top
+                //left: coords[data.pin.addr].left - document.body.scrollLeft,
+                //top: coords[data.pin.addr].top - document.body.scrollTop
+                left: coords[data.pin.addr].left,
+                top: coords[data.pin.addr].top
             }).appendTo("body");
         bubble.text(data.value);
         // For new bubbles, make sure they get stored for re-use
