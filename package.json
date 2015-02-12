@@ -1,12 +1,19 @@
 {
-  "name": "hardweb-starter-kit",
-  "version": "0.0.1",
+  "name": "oh-johnny",
+  "version": "0.1.0",
   "description": "A simple starter kit for arduino based web apps",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "jens alexander ewald",
+  "author": {
+    "name": "ben schwarz",
+    "email": "schwarzfunk@gmail.com"
+  },
+  "contributors": [{
+      "name": "jens alexander ewald",
+      "email": "jens@lea.io"
+  }],
   "license": "MIT",
   "dependencies": {
     "express-livereload": "0.0.24",
